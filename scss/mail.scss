@@ -20,8 +20,12 @@ $bottom-color: #b1adad;
 $svg-color: invert(39%) sepia(11%) saturate(236%) hue-rotate(174deg)
   brightness(93%) contrast(88%);
 $icons-color: #5f6368;
-$shadow-design: 0 0 1px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.2);
+$compose-shadow: 0 1px 2px 0 rgba(60, 64, 67, 30%),
+  0 1px 3px 1px rgba(60, 64, 67, 15%);
+$shadow-design: 0 2px 0 rgba(0, 0, 0, 0.1), 0 0 0px rgba(65, 63, 63, 0.5);
 $other-shadow: 0 0 4px rgba(0, 0, 0, 0.1), 0 0 6px rgba(0, 0, 0, 0.2);
+$mailcount-bg: rgba(0, 0, 0, 0.2);
+// $mmm-shad: inset 1px 1px 0px rgb(0 0 0 10%), inset 0px -1px 0px rgb(0 0 0 7%);
 
 body {
   font-size: 100%;
@@ -55,7 +59,7 @@ body {
   color: $icons-color;
   z-index: 100;
 }
-.top-collapse::after {
+.mailheader--logosection .top-collapse::after {
   content: "";
   width: 40px;
   height: 40px;
@@ -67,7 +71,7 @@ body {
   cursor: pointer;
   z-index: 1;
 }
-.top-collapse:hover::after {
+.mailheader--logosection .top-collapse:hover::after {
   background: $hover-color;
 }
 // logo image
@@ -123,21 +127,6 @@ body {
   position: relative;
   z-index: 10;
 }
-// .search-hover::after {
-//   content: "";
-//   width: 35px;
-//   height: 35px;
-//   border-radius: 50%;
-//   position: absolute;
-//   top: 12px;
-//   left: 260px;
-//   transition: 0.3s;
-//   cursor: pointer;
-//   z-index: 1;
-// }
-// .search-hover:hover::after {
-//   background: $hover-color;
-// }
 .mailheader--search button:hover {
   padding: 4px;
   background: #ebecec;
@@ -170,33 +159,28 @@ body {
 // header section
 .mainheader {
   position: fixed;
-  top: 75px;
+  top: 86px;
   left: 255px;
-  height: auto;
+  // background: blue;
+  width: 79%;
   z-index: 1030;
 }
 .mainheader .mainheader--mailcount {
   display: flex;
   justify-content: space-between;
-  position: fixed;
+  position: relative;
+  // background: brown;
   border-bottom: 1px solid $bottom-color;
-  width: 77%;
+  width: 98.5%;
+  z-index: 1030;
 }
-// header section (right-hand)
-.mainheader--lftdown {
-  display: flex;
-}
+// mail count left container
 .mainheader--mailcount--left {
   display: flex;
   gap: 20px;
   padding: 8px;
   margin-left: 0.3em;
-}
-.mainheader--mailcount--right {
-  display: flex;
-  gap: 12px;
-  padding: 8px;
-  margin-right: 1.3em;
+  z-index: 1030;
 }
 .mainheader--mailcount--left img,
 .mainheader--mailcount--right img {
@@ -209,17 +193,639 @@ body {
 .mainheader--mailcount--left img {
   width: 22px;
 }
+// header section (left-hand mail count container)
+.mainheader--lftdown {
+  display: flex;
+}
+// mail count left side hover background
+.mainheader--lftdown i {
+  padding-left: 5px;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+.slt-img {
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+// select
+.mainheader--lftdown .select-collapse::after {
+  content: "";
+  width: 30px;
+  height: 35px;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1;
+}
+.mainheader--lftdown .select-collapse:hover::after {
+  background: $hover-color;
+}
+//sort-down (left)
+.mainheader--lftdown .sortdown-collapse::after {
+  content: "";
+  width: 20px;
+  height: 35px;
+  position: absolute;
+  top: 2px;
+  left: 35px;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1;
+}
+.mainheader--lftdown .sortdown-collapse:hover::after {
+  background: $hover-color;
+}
+// Refresh
+.mainheader--mailcount--left .refresh-collapse::after {
+  content: "";
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 2px;
+  left: 64px;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1;
+}
+.mainheader--mailcount--left .refresh-collapse:hover::after {
+  background: $hover-color;
+}
+// More
+.mainheader--mailcount--left .more-collapse::after {
+  content: "";
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 2px;
+  left: 125px;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1;
+}
+.mainheader--mailcount--left .more-collapse:hover::after {
+  background: $hover-color;
+}
+// mail count right container
+.mainheader--mailcount--right {
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  margin-right: 1.3em;
+  z-index: 1030;
+}
 .mainheader--mailcount--right p {
   font-size: 0.8rem;
 }
 .mainheader--mailcount--right img {
   width: 20px;
 }
-.mainheader-rftdown .keypad {
-  filter: invert(0%) sepia(2%) saturate(0%) hue-rotate(157deg) brightness(97%)
-    contrast(102%);
+.mainheader-rftdown {
+  display: flex;
 }
 .mainheader-rftdown i {
   position: relative;
-  top: -10px;
+  top: -5px;
+  z-index: 10;
+  cursor: pointer;
+}
+// mail count right side hover background
+.mainheader-rftdown .keypad {
+  filter: invert(0%) sepia(2%) saturate(0%) hue-rotate(157deg) brightness(97%)
+    contrast(102%);
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+.mainheader--mailcount--right .older-collapse::after {
+  content: "";
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 2px;
+  left: 1090px;
+  transition: 0.3s;
+  background: blue;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+.mainheader--mailcount--right .newer-collapse:hover::after {
+  background: $hover-color;
+}
+// Main Container
+.maincontainer {
+  display: grid;
+  grid-template-columns: 17% 79% 4%;
+}
+// Left Aside section
+.maincontainer .maincontainer--asideleft {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 165px;
+  width: 17%;
+  height: 185px;
+  overflow: hidden;
+  border-bottom: 1px solid $hover-color;
+  box-shadow: $shadow-design;
+}
+.maincontainer .maincontainer--asideleft:hover {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+// compose button
+.maincontainer--asideleft--compose button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  top: 95px;
+  border: 1px solid transparent;
+  border-radius: 700px;
+  background: #fff;
+  box-shadow: $compose-shadow;
+  width: 140px;
+  height: 50px;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+// compose text
+.maincontainer--asideleft--compose p {
+  font-weight: 500;
+}
+// Mail tray
+.maincontainer--mailtray a {
+  display: flex;
+  color: $icons-color;
+  padding-top: 1.2em;
+  padding-left: 1.5em;
+}
+.maincontainer--inbox a {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 12px 0 26px;
+  gap: 25px;
+  color: #d93025;
+}
+.maincontainer--mailtray .maincontainer--inbox {
+  background: #f7d6d3;
+  width: 230px;
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.mailnumb {
+  display: flex;
+  padding-left: 40px;
+  font-size: 0.875rem;
+}
+.draftnumb {
+  display: flex;
+  padding-left: 75px;
+}
+.maincontainer--starred a,
+.maincontainer--snoozed a,
+.maincontainer--important a,
+.maincontainer--sent a,
+.maincontainer--drafts a,
+.maincontainer--categories a,
+.maincontainer--more a {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 12px 0 26px;
+  gap: 25px;
+}
+.maincontainer--mailtray .maincontainer--starred:hover,
+.maincontainer--snoozed:hover,
+.maincontainer--important:hover,
+.maincontainer--sent:hover,
+.maincontainer--drafts:hover,
+.maincontainer--categories:hover,
+.maincontainer--more:hover {
+  background: $hover-color;
+  width: 230px;
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+// Meeting container
+.maincontainer--meeting {
+  position: fixed;
+  top: 370px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 1.5em;
+}
+.bdbtm {
+  background: $hover-color;
+  position: absolute;
+  top: 120px;
+  left: -1px;
+  width: 258px;
+  height: 0.1px;
+}
+.maincontainer--meeting--newmeet {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+// Meeting icons
+.maincontainer--meeting--newmeet .vid-keypad--icon {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  height: 40px;
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  // cursor: pointer;
+}
+.maincontainer--meeting--newmeet .meet-keypad--icon {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  height: 40px;
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.vid-keypad--icon i,
+.meet-keypad--icon i {
+  color: $icons-color;
+}
+.maincontainer--meeting--newmeet .vid-keypad--icon:hover,
+.meet-keypad--icon:hover {
+  background: $hover-color;
+  // width: 230px;
+}
+// Meeting link
+.meeting_link {
+  color: $icons-color;
+}
+// Hangout
+.maincontainer--hangouts {
+  position: fixed;
+  top: 508px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 1.5em;
+}
+.maincontainer--hangouts--more {
+  display: flex;
+  align-items: center;
+  padding-top: 0.5em;
+}
+.maincontainer--hangouts--more img {
+  border-radius: 50%;
+}
+.my-chat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.my-chat i:hover {
+  color: #b1adad;
+}
+.rooo {
+  display: flex;
+  padding-left: 4.4em;
+}
+.maincontainer--hangouts--more .rooo i {
+  color: $icons-color;
+}
+.maincontainer--hangouts--more .rooo i:hover {
+  background: $hover-color;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.lsbtm {
+  background: $hover-color;
+  position: absolute;
+  top: 80px;
+  left: -1px;
+  width: 258px;
+  height: 0.1px;
+}
+// Mail container
+.maincontainer .maincontainer--mailcontainer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 126px;
+  // top: 0;
+  bottom: 0;
+  left: 257px;
+  height: 870px;
+  width: 79%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: -1030;
+}
+.contscroll {
+  position: fixed;
+  top: 126px;
+  bottom: 0;
+  left: 257px;
+  width: 79%;
+  height: 580px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: -1030;
+}
+// .maincontainer .maincontainer--mailcontainer:hover {
+//   overflow-x: hidden;
+//   overflow-y: scroll;
+// }
+// Mail container top (Social, Promotions, etc.)
+.maincontainer--mailcontainer--top {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $bottom-color;
+  gap: 120px;
+  height: 9vh;
+}
+// Primary mail
+.maincontainer--mailcontainer--top .maincontainer--primarymail {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: 0.87em;
+  cursor: pointer;
+}
+.maincontainer--primarymail i,
+h4 {
+  color: #d93025;
+}
+// Abstract primary mail line
+.maincontainer--primarymail .prybtm {
+  background: #d93025;
+  position: absolute;
+  top: 60px;
+  left: 7px;
+  width: 190px;
+  height: 4px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+// .maincontainer--mailcontainer--top .maincontainer--primarymail:hover {
+//   background: $hover-color;
+// }
+// Social mail
+.maincontainer--mailcontainer--top .maincontainer--social {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  cursor: pointer;
+}
+.maincontainer__blue {
+  color: #fff;
+  background: #1a73e8;
+  padding: 0.1em 0.2em;
+}
+// Promotions
+.maincontainer--mailcontainer--top .maincontainer--promotions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  cursor: pointer;
+}
+.maincontainer--social i,
+.maincontainer--promotions i {
+  color: $icons-color;
+}
+.maincontainer--promotions h4,
+.maincontainer--social h4 {
+  font-size: 0.875rem;
+  color: #5f6368;
+  font-weight: 500;
+}
+.maincontainer--promotions p,
+.maincontainer--social p {
+  font-size: 0.875rem;
+  padding-top: 0.4em;
+  font-weight: 300;
+  color: $bottom-color;
+}
+.maincontainer__green {
+  color: #fff;
+  background: #188038;
+  padding: 0.1em 0.2em;
+}
+// Main mailing list
+.maincontainer--mailinglist {
+  display: flex;
+  // flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  // width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid $hover-color;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  color: #202124;
+  overflow: hidden;
+  white-space: nowrap;
+  // text-overflow: ellipsis;
+}
+.maincontainer--mailinglist .mailinglist--left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 1rem;
+}
+.maincontainer--mailinglist .mailinglist--left:first-child {
+  margin-right: 0.5em;
+}
+.maincontainer--mailinglist .mailinglist--left i {
+  align-self: center;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.1);
+  padding-right: 0.5em;
+  cursor: pointer;
+}
+.maincontainer--mailinglist:hover .mailinglist--left i {
+  color: #575757;
+}
+.maincontainer--mailinglist .mailinglist--left input {
+  display: flex;
+  margin-right: 1rem;
+}
+.mailinglist--left p {
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+  font-weight: 700;
+}
+.maincontainer--mailinglist .mailinglist-text {
+  display: flex;
+  font-size: 1rem;
+  text-align: start;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.mailinglist-text span {
+  font-weight: 400;
+  color: #5f6368;
+}
+.maincontainer--mailinglist:hover {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
+    0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  z-index: 1;
+  cursor: pointer;
+  transition: 0.3s;
+}
+// Abstract mailing list (when hovered on the mail container
+.maincontainer--mailinglist .mailinglist--right {
+  color: #5f6368;
+  display: flex;
+  justify-content: space-evenly;
+  align-self: center;
+  font-size: 17px;
+  display: none;
+  transition: 0.3s;
+}
+.maincontainer--mailinglist:hover .mailinglist--right {
+  color: #5f6368;
+  display: flex;
+  flex-basis: 15%;
+  justify-content: space-evenly;
+  align-self: center;
+  font-size: 17px;
+  padding-right: 0.1rem;
+  transition: 0.3s;
+}
+// Mailing list Real-time records
+.maincontainer--mailinglist .mailinglist-time {
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding-right: 1rem;
+}
+.maincontainer--mailinglist:hover .mailinglist-time {
+  display: none;
+}
+.maincontainer--mailinglist .mailinglist--left p {
+  margin-right: 2rem;
+}
+// Footer
+.maincontainer--foot {
+  display: flex;
+  // width: 95%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 13px;
+  color: #5f6368;
+}
+// footer (stats info)
+.maincontainer--foot .stats-info {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  gap: 10px;
+}
+.stas-top {
+  width: 250px;
+  height: 8px;
+  background: $hover-color;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.stas-btm {
+  width: 30px;
+  height: 8px;
+  background: $icons-color;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.stas-details {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.stas-details i {
+  color: $icons-color;
+  font-size: 16px;
+}
+// footer (more info)
+.maincontainer--foot .more-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.maincontainer--foot .more-info a {
+  color: $icons-color;
+}
+.maincontainer--foot .more-info a:hover,
+.maincontainer--foot .activity-info a:hover {
+  text-decoration: underline;
+}
+// footer (activity info)
+.maincontainer--foot .activity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 1.1em;
+}
+.maincontainer--foot .activity-info a {
+  color: $icons-color;
+  padding-left: 13em;
+}
+// Right Aside section
+.maincontainer .maincontainer--asideright {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 70px;
+  left: 1455px;
+  width: 4%;
+  min-height: 100vh;
+  height: 80px;
+  border-left: 1px solid $hover-color;
+  margin-left: 1px solid $bottom-color;
+}
+.maincontainer--asideright--final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em;
+  gap: 40px;
+}
+.maincontainer--asideright--final img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.maincontainer--asideright--final img:hover {
+  background: #ebecec;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.minus {
+  width: 25px;
+  height: 1px;
+  background: $bottom-color;
+}
+.maincontainer--asideright--final i {
+  padding-top: 12em;
+  color: $icons-color;
+  cursor: pointer;
 }

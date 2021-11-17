@@ -50,26 +50,635 @@
     <!-- header section -->
     <header class="mainheader">
         <div class="mainheader--mailcount">
-            <div>
-                <div class="mainheader--mailcount--left">
-                    <div class="mainheader--lftdown">
-                        <img src="./images/check_box_outline_blank_black_24dp.svg" alt="">
-                        <i class="fas fa-sort-down"></i>
-                    </div>
-                    <img src="./images/refresh_black_24dp.svg" alt="">
-                    <img src="./images/more_vert_black_24dp.svg" alt="">
+            <!-- Mail count left container -->
+            <div class="mainheader--mailcount--left">
+                <div class="mainheader--lftdown">
+                    <img src="./images/check_box_outline_blank_black_24dp.svg" class="slt-img" data-toggle="tooltip" title="Select" alt="">
+                    <div class="select-collapse"></div>
+                    <i class="fas fa-sort-down" data-toggle="tooltip" title="Select"></i>
+                    <div class="sortdown-collapse"></div>
                 </div>
+                <img src="./images/refresh_black_24dp.svg" class="slt-img" data-toggle="tooltip" title="Refresh" alt="">
+                <div class="refresh-collapse"></div>
+                <img src="./images/more_vert_black_24dp.svg" class="slt-img" data-toggle="tooltip" title="More" alt="">
+                <div class="more-collapse"></div>
             </div>
+            <!-- Mail count right container -->
             <div class="mainheader--mailcount--right">
                 <p>1-50 of 14,207</p>
-                <img src="./images/chevron_left_black_24dp.svg" alt="">
-                <img src="./images/chevron_right_black_24dp.svg" alt="">
+                <img src="./images/chevron_left_black_24dp.svg" class="slt-img" data-toggle="tooltip" title="Newer" alt="">
+                <img src="./images/chevron_right_black_24dp.svg" class="slt-img" data-toggle="tooltip" title="Older" alt="">
+                <div class="older-collapse"></div>
                 <div class="mainheader-rftdown">
-                    <img src="./images/keyboard_black_24dp.svg" class="keypad" alt="">
+                    <img src="./images/keyboard_black_24dp.svg" data-toggle="tooltip" title="Input tools on/off (Ctrl-Shift-K)" class="keypad" alt="">
+                    <div class="keypad-collapse"></div>
                     <i class="fas fa-sort-down"></i>
                 </div>
             </div>
         </div>
     </header>
+    <!-- Main Container -->
+    <main class="maincontainer">
+        <aside class="maincontainer--asideleft">
+            <div class="maincontainer--asideleft--compose">
+                <button>
+                    <img src="./images/compose icon.png" alt="create">
+                    <p>Compose</p>
+                </button>
+            </div>
+            <!-- Mail tray -->
+            <div class="maincontainer--mailtray">
+                <div class="maincontainer--inbox">
+                    <a href="#" data-toggle="tooltip" title="Inbox" target="_blank">
+                        <div><i class="fas fa-inbox"></i></div>
+                        <div><p class="text-white"><strong>Inbox</strong></p></div>
+                        <div><p class="mailnumb">16,308</p></div>
+                    </a>
+                </div>
+                <div class="maincontainer--starred">
+                    <a href="#" data-toggle="tooltip" title="Starred" target="_blank">
+                        <div><i class="fas fa-star"></i></div>
+                        <div><p class="text-white">Starred</p></div>
+                    </a>
+                </div>
+                <div class="maincontainer--snoozed">
+                    <a href="#" data-toggle="tooltip" title="Snoozed" target="_blank">
+                        <div><i class="fas fa-clock"></i></div>
+                        <div><p class="text-white">Snoozed</p></div>
+                    </a>
+                </div>
+                <div class="maincontainer--important">
+                    <a href="#" data-toggle="tooltip" title="Important" target="_blank">
+                        <div><i class="fas fa-box"></i></div>
+                        <div><p class="text-white">Important</p></div>
+                    </a>
+                </div>
+                <div class="maincontainer--sent">
+                    <a href="#" data-toggle="tooltip" title="Sent" target="_blank">
+                        <div><i class="fas fa-paper-plane"></i></div>
+                        <div><p class="text-white">Sent</p></div>
+                    </a>
+                </div>
+                <div class="maincontainer--drafts">
+                    <a href="#" data-toggle="tooltip" title="Drafts" target="_blank">
+                        <div><i class="fas fa-inbox"></i></div>
+                        <div><p class="text-white"><strong>Drafts</strong></p></div>
+                        <div><p class="draftnumb">3</p></div>
+                    </a>
+                </div>
+                <div class="maincontainer--categories">
+                    <a href="#" data-toggle="tooltip" title="Categories" target="_blank">
+                        <div><i class="fas fa-box"></i></div>
+                        <div><p class="text-white">Categories</p></div>
+                    </a>
+                </div>
+                <div class="maincontainer--more">
+                    <a href="#" data-toggle="tooltip" title="More" target="_blank">
+                        <div><i class="fas fa-chevron-down"></i></div>
+                        <div><p class="text-white">More</p></div>
+                    </a>
+                </div>
+            </div>
+            <div class="maincontainer--meeting">
+                <span>Meet</span>
+                <div class="maincontainer--meeting--newmeet">
+                    <div class="vid-keypad--icon" data-toggle="tooltip" title="New meeting">
+                        <i class="fas fa-video"></i>
+                        <a href="#" class="meeting_link" target="_blank"><p>New meeting</p></a>
+                    </div>
+                    <div class="meet-keypad--icon" data-toggle="tooltip" title="Join a meeting">
+                        <i class="fas fa-keyboard"></i>
+                        <a href="#" class="meeting_link" target="_blank"><p>Join a meeting</p></a>
+                    </div>
+                </div>
+                <div class="bdbtm"></div>
+            </div>
+            <div class="maincontainer--hangouts">
+                <span><strong>Hangouts</strong></span>
+                <div class="maincontainer--hangouts--more">
+                    <div class="my-chat">
+                        <a href="#"><img src="./images/mine.jpg" alt="opeyemi"></a>
+                        <p>Opeyemi</p>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                    <div class="rooo" data-toggle="tooltip" title="New conversation">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="lsbtm"></div>
+                </div>
+            </div>
+        </aside>
+        <section class="maincontainer--mailcontainer">
+            <div class="contscroll">
+                <div class="maincontainer--mailcontainer--top">
+                    <div class="maincontainer--primarymail">
+                        <div>
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <div data-toggle="tooltip" title="Person-to-person conversations and messages that don't appear in other tabs">
+                            <h4>Primary</h4>
+                        </div>
+                        <!-- Abstract primary email line -->
+                        <div class="prybtm"></div>
+                    </div>
+                    <div class="maincontainer--social">
+                        <div>
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div data-toggle="tooltip" title="Messages from social networks, media-sharing sites, online dating services, and other social websites">
+                            <h4>Social <span class="maincontainer__blue">33 new</span></h4>
+                            <p>Goodreads, Instagram, Amazon, Linkedln</p>
+                        </div>
+                    </div>
+                    <div class="maincontainer--promotions">
+                        <div>
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <div data-toggle="tooltip" title="Marketing, interests, social and political causes, and other promotional emails">
+                            <h4>Promotions <span class="maincontainer__green">42 new</span></h4>
+                            <p>Opportunities for Africans., Inc...</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main mailing list -->
+                <!-- First category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Free-eBooks.net</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>(Editor Picks)<li>Only the best for Tunde</li><span>- Limited Time 2021 Best Seller Book Bundle Our Best P...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">3:22 PM</div>
+                </div>
+                <!-- Second category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Freelancer.com</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>Network scientists, win your share of US$16, 000 in the Network Science Threat Detection Cha...</p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">10:25 PM</div>
+                </div>
+                <!-- Third Category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Coursera</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>You're invited: Master of Science in Management's upcoming webinar<span>- Sign up now to reserve...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">8:15 PM</div>
+                </div>
+                <!-- Fourth Category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>TED Talks Daily</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>3 steps of getting what you want in a negotiation<span>- Negotiation doesn't have to be a battle TED ...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">9:43 AM</div>
+                </div>
+                <!-- Fifth category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Indeed</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>Freelance Copywriter at TOP Agency and 2 more Content Developer jobs in Lagos for you!<span>- ov ...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 12</div>
+                </div>
+                <!-- Sixth category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>U.S. Department of .</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>The Time is Now<span>- Submit Your STEM Best Practices Having trouble viewing this email? View it ...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 12</div>
+                </div>
+                <!-- Seventh category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>300mbfilms.cx</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>300MB Movies<span>- 300MB Movies Red Notice 2021 720p WEB-DL 575MB nltRo The Colour Room ...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 12</div>
+                </div>
+                <!-- Eight category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Google Alerts</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>Google Alert - Entertainment<span>- Google Entertainment Daily Update 11 November 2021 NEWS D...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 11</div>
+                </div>
+                <!-- Ninth Category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Google Alerts</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>Google Alert - orts<span>- Sports Daily Update 11 November 2021 NEWS DAILY Post Nigeria EPL. ...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 11</div>
+                </div>
+                <!-- Tenth category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Fast Company's Worl.</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>[Deadline Alert] Don't miss your last chance to save!<span>- FAST COMPANY Fast Company | World C...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 11</div>
+                </div>
+                <!-- Eleventh category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Deepak Khay</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>Webinar Started: Growth Hacking 101<span>- Hello Segun, A free webinar on Growth Hacking is starti...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 11</div>
+                </div>
+                <!-- Twelve category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Smashing Magazine</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>#327: Designing For Mobile and Touch<span>- With useful tools for designing better mobile UX, best practi...</span>
+                        </p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 10</div>
+                </div>
+                <!-- Thirteen category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>The A11Y Project</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>The A11Y Project update: November 11th, 2021<span>- What we shared this week Legal update: Accessib...</span>
+                        </p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 11</div>
+                </div>
+                <!-- Fourteen category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>JavaScript Weekly</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>'Moving more and more into a post-React World.'<span>- Plus a tool to figure out what npm packages a pa...</span>
+                        </p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 11</div>
+                </div>
+                <!-- Fifteen category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Marketing Brew</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>On again, off again<span>- Why brands buy carbon offsets. Novemeber 10, 2021 Marketing BREW TOGET...</span>
+                        </p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 10</div>
+                </div>
+                <!-- Sixteen category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Linkedln</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>New jobs similar to Business Development Representative (UK - Remote) at Sysdig<span>- Check out jobs...</span>
+                        </p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 11</div>
+                </div>
+                <!-- Seventeen category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Google Alerts</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>Google Alert - Entertainment<span>- Google Entertainment Daily Update 11 November 2021 NEWS D...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 11</div>
+                </div>
+                <!-- Eighteen category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Google Alerts</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>Google Alert - Entertainment<span>- Google Entertainment Daily Update 11 November 2021 NEWS D...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 11</div>
+                </div>
+                <!-- 19th category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Google Alerts</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>Google Alert - Entertainment<span>- Google Entertainment Daily Update 11 November 2021 NEWS D...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 11</div>
+                </div>
+                <!-- 20th category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Google Alerts</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>Google Alert - Entertainment<span>- Google Entertainment Daily Update 11 November 2021 NEWS D...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 11</div>
+                </div>
+                <!-- 21st category -->
+                <div class="maincontainer--mailinglist">
+                    <div class="mailinglist--left">
+                        <input type="checkbox" name="mail" id="mail">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-bookmark"></i>
+                        <p>Google Alerts</p>
+                    </div>
+                    <div class="mailinglist-text">
+                        <p>Google Alert - Entertainment<span>- Google Entertainment Daily Update 11 November 2021 NEWS D...</span></p>
+                    </div>
+                    <!-- Abstract mailing list (when hovered on the mail container -->
+                    <div class="mailinglist--right">
+                        <i class="fas fa-archive"></i>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-envelope-open"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <!-- Mailing list Real-time records -->
+                    <div class="mailinglist-time">Nov 11</div>
+                </div>
+                <!-- footer category -->
+                <footer class="maincontainer--foot">
+                    <div class="stats-info">
+                        <div class="stas-top"><div class="stas-btm"></div></div>
+                        <div class="stas-details">
+                            <p>2.96 GB of 15 GB used</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="more-info">
+                        <a href="#">Terms</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Program Policies</a>
+                    </div>
+                    <div class="activity-info">
+                        <p>Last account activity: 8 minutes ago</p>
+                        <a href="#">Details</a>
+                    </div>
+                </footer>
+            </div>
+        </section>
+        <aside class="maincontainer--asideright">
+            <div class="maincontainer--asideright--final">
+                <img src="./images/calendar cloned.png" alt="calendar" data-toggle="tooltip" title="Calendar">
+                <img src="./images/keep cloned.png" alt="keep icon" data-toggle="tooltip" title="Keep">
+                <img src="./images/tasks cloned.png" alt="task icon" data-toggle="tooltip" title="Tasks">
+                <img src="./images/contacts cloned.png" alt="contact" data-toggle="tooltip" title="Contacts">
+                <div class="minus"></div>
+                <img src="./images/add cloned.png" alt="add icon" data-toggle="tooltip" title="Get Add-ons">
+                <i class="fas fa-chevron-right" data-toggle="tooltip" title="Hide side panel"></i>
+            </div>
+        </aside>
+    </main>
 </body>
 </html>
