@@ -25,8 +25,6 @@ $compose-shadow: 0 1px 2px 0 rgba(60, 64, 67, 30%),
 $shadow-design: 0 2px 0 rgba(0, 0, 0, 0.1), 0 0 0px rgba(65, 63, 63, 0.5);
 $other-shadow: 0 0 4px rgba(0, 0, 0, 0.1), 0 0 6px rgba(0, 0, 0, 0.2);
 $mailcount-bg: rgba(0, 0, 0, 0.2);
-// $mmm-shad: inset 1px 1px 0px rgb(0 0 0 10%), inset 0px -1px 0px rgb(0 0 0 7%);
-
 body {
   font-size: 100%;
   font-family: "Roboto", sans-serif;
@@ -138,9 +136,10 @@ body {
 .mailheader .mailheader-appsection {
   display: flex;
   justify-content: space-evenly;
+  gap: 5px;
   align-items: center;
   justify-self: flex-start;
-  margin-right: 0.5em;
+  margin-right: 1em;
 }
 .mailheader-appsection img {
   color: $svg-color;
@@ -161,7 +160,6 @@ body {
   position: fixed;
   top: 86px;
   left: 255px;
-  // background: blue;
   width: 79%;
   z-index: 1030;
 }
@@ -169,7 +167,6 @@ body {
   display: flex;
   justify-content: space-between;
   position: relative;
-  // background: brown;
   border-bottom: 1px solid $bottom-color;
   width: 98.5%;
   z-index: 1030;
@@ -290,7 +287,8 @@ body {
 }
 .mainheader-rftdown i {
   position: relative;
-  top: -5px;
+  top: -3px;
+  left: 6px;
   z-index: 10;
   cursor: pointer;
 }
@@ -308,9 +306,8 @@ body {
   height: 35px;
   position: absolute;
   top: 2px;
-  left: 1090px;
+  left: 1072px;
   transition: 0.3s;
-  background: blue;
   border-radius: 50%;
   cursor: pointer;
   z-index: 1;
@@ -449,7 +446,6 @@ body {
   border: none;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  // cursor: pointer;
 }
 .maincontainer--meeting--newmeet .meet-keypad--icon {
   display: flex;
@@ -468,7 +464,6 @@ body {
 .maincontainer--meeting--newmeet .vid-keypad--icon:hover,
 .meet-keypad--icon:hover {
   background: $hover-color;
-  // width: 230px;
 }
 // Meeting link
 .meeting_link {
@@ -546,10 +541,6 @@ body {
   overflow-x: hidden;
   z-index: -1030;
 }
-// .maincontainer .maincontainer--mailcontainer:hover {
-//   overflow-x: hidden;
-//   overflow-y: scroll;
-// }
 // Mail container top (Social, Promotions, etc.)
 .maincontainer--mailcontainer--top {
   display: flex;
@@ -581,9 +572,6 @@ h4 {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-// .maincontainer--mailcontainer--top .maincontainer--primarymail:hover {
-//   background: $hover-color;
-// }
 // Social mail
 .maincontainer--mailcontainer--top .maincontainer--social {
   display: flex;
@@ -628,22 +616,24 @@ h4 {
 // Main mailing list
 .maincontainer--mailinglist {
   display: flex;
-  // flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  // width: 100%;
   padding: 10px 0;
   border-bottom: 1px solid $hover-color;
   border-bottom-color: rgba(0, 0, 0, 0.1);
   color: #202124;
   overflow: hidden;
   white-space: nowrap;
-  // text-overflow: ellipsis;
 }
 .maincontainer--mailinglist .mailinglist--left {
   display: flex;
   align-items: center;
   gap: 5px;
+  padding-left: 1rem;
+  flex-basis: 25%;
+  min-width: 25%;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
   padding-left: 1rem;
 }
 .maincontainer--mailinglist .mailinglist--left:first-child {
@@ -670,11 +660,13 @@ h4 {
 }
 .maincontainer--mailinglist .mailinglist-text {
   display: flex;
-  font-size: 1rem;
+  flex-basis: 60%;
+  flex-grow: 1;
+  font-weight: 600;
+  letter-spacing: 0.2px;
   text-align: start;
-  overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  width: 100%;
 }
 .mailinglist-text span {
   font-weight: 400;

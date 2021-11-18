@@ -133,9 +133,10 @@ body {
 .mailheader .mailheader-appsection {
   display: flex;
   justify-content: space-evenly;
+  gap: 5px;
   align-items: center;
   justify-self: flex-start;
-  margin-right: 0.5em;
+  margin-right: 1em;
 }
 
 .mailheader-appsection img {
@@ -298,7 +299,8 @@ body {
 
 .mainheader-rftdown i {
   position: relative;
-  top: -5px;
+  top: -3px;
+  left: 6px;
   z-index: 10;
   cursor: pointer;
 }
@@ -316,9 +318,8 @@ body {
   height: 35px;
   position: absolute;
   top: 2px;
-  left: 1090px;
+  left: 1072px;
   transition: 0.3s;
-  background: blue;
   border-radius: 50%;
   cursor: pointer;
   z-index: 1;
@@ -669,6 +670,11 @@ h4 {
   align-items: center;
   gap: 5px;
   padding-left: 1rem;
+  flex-basis: 25%;
+  min-width: 25%;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  padding-left: 1rem;
 }
 
 .maincontainer--mailinglist .mailinglist--left:first-child {
@@ -700,11 +706,13 @@ h4 {
 
 .maincontainer--mailinglist .mailinglist-text {
   display: flex;
-  font-size: 1rem;
+  flex-basis: 60%;
+  flex-grow: 1;
+  font-weight: 600;
+  letter-spacing: 0.2px;
   text-align: start;
-  overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  width: 100%;
 }
 
 .mailinglist-text span {
