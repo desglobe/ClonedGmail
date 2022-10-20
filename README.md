@@ -41,3 +41,4 @@ transition: 0.3s;
 
 "Roboto"
 [Live Site on Netlify](http://)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7a038bd372a24de2b3a345a65fe14677)](https://www.codacy.com/gh/desglobe/ClonedGmail/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=desglobe/ClonedGmail&amp;utm_campaign=Badge_Grade)
